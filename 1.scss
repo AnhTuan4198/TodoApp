@@ -1,0 +1,159 @@
+$maincolor: rgb(245, 245, 245);
+$breakLine:rgba(169, 169, 169, 0.205);
+
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.App{
+    height: 90vh;
+    width: 20vw;
+    min-width: 350px;
+    margin:5vh auto;
+    //border:1px solid red;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 7px 5px 10px darkgray;
+    
+    .App-header{
+        margin: 0px;
+        position: relative;
+        height: 25%;
+        width: 100%;
+        //border:1px solid cyan;
+        background: url(./Img/HeaderImg.jpg);
+        object-fit:cover;
+        background-position: center;
+        border-radius: 5px;
+        .Refresh-button{
+            position: absolute;
+            top:10px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            text-shadow: 2px 2px darkgray;
+        }
+        .Date{
+            position: absolute;
+            left:20px;
+            bottom:10px;
+            font-size: 35px;
+            color: white;
+            text-shadow:2px 2px gray;
+        }
+    }
+    .App-body{
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        background-color: $maincolor;
+        margin:0px;
+        .Task-list{
+            margin:0px;
+            height: 85%;
+            border-bottom:1px solid $breakLine; 
+            //background-color: powderblue;
+            .item{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin: 10px;
+                height: 30px;
+                font-size: 25px;
+                border-bottom:1px solid $breakLine; 
+                text-align: center;
+                .text{
+                    position: relative;
+                    flex:1;
+                    display: inline-block;  
+                    height: 100%;
+                    padding-left: 15px;
+                    margin: 0px;
+                    text-align: start;
+                    font-size: 18px;
+                    font-weight:600;
+                }
+                .completed{
+                        color:darkgray;
+                        text-decoration: line-through darkgray;
+                    }
+                .check{
+                    width: 25px;
+                    height: 25px;
+                    border:1px solid black;
+                    border-radius: 50%;
+                }
+                 .checked{
+                        background-color: rgb(84, 243, 63);
+                }
+                i{
+                    font-size: 30px;
+                    //border: 1px solid red;
+                    width: 40px;
+                }
+                .bin{
+                    &:hover{
+                        color:red;
+                    }
+                }
+                
+            }
+        }
+        .Insert-task{
+            margin:0px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 10%;
+            flex:1;
+            //background-color: salmon;
+            .input{
+                width:75%;
+                text-align: center;
+                text-shadow: 1px 1px rgb(204, 204, 204);
+                border-top:none;
+                border-left:none;
+                border-right:none;
+                border-bottom: 1px rgba(109, 109, 109, 0.377) solid ;
+                background-color: $maincolor;
+            }
+            .Add-button{
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: rgb(36, 136, 202);
+                &::before{
+                    content:'';
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    border-radius: 2.5px;
+                    height: 5px;
+                    width: 60%;
+                    background-color: white;
+                }
+                 &::after{
+                    content:'';
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) rotate(90deg);
+                    border-radius: 2.5px;
+                    height: 5px;
+                    width: 60%;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
